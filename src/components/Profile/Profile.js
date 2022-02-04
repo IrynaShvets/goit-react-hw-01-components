@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import Container from '../Container/Container';
 
 export default function Profile(props) {
   const {avatar, username, tag, location, followers, views, likes} = props;
   
   return (
-    
-    <div className="profile">
+    <Container>
+      <div className="profile">
       <div className="description">
         <img
           src={avatar}
@@ -31,7 +32,8 @@ export default function Profile(props) {
           <span className="quantity">{likes}</span>
         </li>
       </ul>  
-    </div>
+      </div>
+    </Container>
   ) 
 }
 
