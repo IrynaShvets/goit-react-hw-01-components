@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Item, Status, Avatar, Name } from './FriendListItem.styled';
 
 FriendListItem.propTypes = {
   isOnline: PropTypes.bool.isRequired,
@@ -8,18 +9,10 @@ FriendListItem.propTypes = {
 
 export default function FriendListItem({ isOnline, avatar, name }) {
   return (
-    <li className="item">
-      <span className="status">{isOnline}</span>
-      <img className="avatar" src={avatar} alt={name} width="48" />
-      <p className="name">{name}</p>
-    </li>
+    <Item>
+      <Status status={isOnline}></Status>
+      <Avatar src={avatar} alt={name} width="65" />
+      <Name>{name}</Name>
+    </Item>
   );
 }
-/* <div
-        style={{
-          width: '10px',
-          heigh: '10px',
-          borderRadius: '50%',
-          background: isOnline ? 'green' : 'red',
-        }}
-      ></div> */
